@@ -679,7 +679,7 @@ if selected == "Explore Data":
                 f"select state, sum(count) as Total_Transactions, sum(amount) as Total_amount from map_trans where year = {Year} and quarter = {Quarter} group by state order by state")
             df1 = pd.DataFrame(mycursor.fetchall(), columns=['State', 'Total_Transactions', 'Total_amount'])
             df2 = pd.read_csv(
-                r'C:\Users\samue\Downloads\bus attrocates\Phonepe_Pulse_Data_Visualization-main\Phonepe_Pulse_Data_Visualization\Data\Statenames.csv')
+                
             df1.State = df2
 
             fig = px.choropleth(df1,
@@ -698,8 +698,7 @@ if selected == "Explore Data":
             mycursor.execute(
                 f"select state, sum(count) as Total_Transactions, sum(amount) as Total_amount from map_trans where year = {Year} and quarter = {Quarter} group by state order by state")
             df1 = pd.DataFrame(mycursor.fetchall(), columns=['State', 'Total_Transactions', 'Total_amount'])
-            df2 = pd.read_csv(
-                r'C:\Users\samue\Downloads\bus attrocates\Phonepe_Pulse_Data_Visualization-main\Phonepe_Pulse_Data_Visualization\Data\Statenames.csv')
+            df2 = pd.read_csv(.csv')
             df1.Total_Transactions = df1.Total_Transactions.astype(int)
             df1.State = df2
 
@@ -766,8 +765,7 @@ if selected == "Explore Data":
         mycursor.execute(
             f"select state, sum(RegisteredUser) as Total_Users, sum(AppOpens) as Total_Appopens from map_user where year = {Year} and quarter = {Quarter} group by state order by state")
         df1 = pd.DataFrame(mycursor.fetchall(), columns=['State', 'Total_Users', 'Total_Appopens'])
-        df2 = pd.read_csv(
-            r'C:\Users\samue\Downloads\bus attrocates\Phonepe_Pulse_Data_Visualization-main\Phonepe_Pulse_Data_Visualization\Data\Statenames.csv')
+        df2 = pd.read_csv(.csv')
         df1.Total_Appopens = df1.Total_Appopens.astype(float)
         df1.State = df2
 
